@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import "./App.css";
+import Subscription from "./Subscription";
+import bg from "./images/bg.png";
+import { device } from "./device";
+
+const Div = styled.div`
+  background-image: url(${bg});
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  @media ${device.mobileL} {
+    display: flex;
+    height: 100%
+  }
+  @media ${device.tablet} {
+    height: 100vh;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Div className="App">
+      <Subscription />
+    </Div>
   );
 }
 
